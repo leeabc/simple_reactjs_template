@@ -1,0 +1,23 @@
+{
+  "name": "simple_reactjs_template",
+  "version": "0.0.1",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  },
+  "devDependencies": {
+    "react": "~0.12.0"
+  }
+}

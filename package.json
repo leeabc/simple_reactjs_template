@@ -1,0 +1,24 @@
+{
+  "name": "simple_reactjs_template",
+  "version": "1.0.0",
+  "devDependencies": {
+    "react": "~0.10.0",
+    "browserify": "^4.2.0",
+    "connect": "^2.17.1",
+    "gulp": "^3.8.5",
+    "reactify": "^0.13.1",
+    "gulp-webserver": "^0.8.4"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {
+    "debug": "^2.1.0",
+    "es6-promise": "~0.1.1",
+    "gulp-livereload": "^2.1.1",
+    "gulp-less": "^1.3.6",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-notify": "^2.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
