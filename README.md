@@ -4,10 +4,11 @@
 - Built in preview web server & live reload
 - Bootstrap 3.2 css framework
 - Less preprocessor
+- ReactJs engine
+- Flux flow
 
 ## Getting Start
 - npm install
-- bower install
 - gulp
 
 ##Contribute
