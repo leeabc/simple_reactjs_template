@@ -13,9 +13,6 @@ var live = livereload();
 livereload.listen();
 
 var paths = {
-    jqueryJS    : './app/bower_components/jquery/dist/jquery.js',
-    bootstrapJS : './app/bower_components/bootstrap/dist/js/bootstrap.js',
-    reactJS     : './app/bower_components/react/react-with-addons.min.js',
     main        : './app/js/boot.js',
     less        : './app/assets/less/Main.less',
     destDir     : 'dist',
@@ -56,10 +53,6 @@ gulp.task('copy', function(){
     //copy html
     gulp.src([ 'app/index.html' ])
     .pipe( gulp.dest(paths.destDir) );
-
-    //copy JS
-    gulp.src([ paths.jqueryJS, paths.bootstrapJS, paths.reactJS ])
-    .pipe( gulp.dest(paths.destJS) );
 });
 
 //start web server
