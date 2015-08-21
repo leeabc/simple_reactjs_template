@@ -9,7 +9,7 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{ test: /\.jsx$/, loaders: ['jsx?harmony']}, //for jsx
+			{ test: /\.jsx$/, loaders: ['jsx?harmony', 'babel-loader']}, //for jsx
 			{ test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader']}, //for es6 should exclude node_module!
 			{ test: /\.less$/, loaders: ['style-loader','css-loader','less-loader']}, // for less
 			{ test: /\.(woff2|woff|svg|eot|ttf)$/, loaders: ['file-loader']}, //for bootstrap font file

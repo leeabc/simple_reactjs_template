@@ -1,9 +1,9 @@
-var $ = require('jquery');
-var React = require('react');
-//var MainApp = React.createFactory(require("../js/components/Main.jsx"));
+import $ from 'jquery';
+import React from 'react';
 
-var Greeting = require('./Components/Main.jsx');
+//component
+import Main from './Components/Main.jsx'
 
-$(function(){
-    React.render(<Greeting/>, document.getElementById("container"));
+$(()=>{
+    React.render(<Main/>, document.getElementById("container"));
 });

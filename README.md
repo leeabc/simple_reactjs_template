@@ -8,8 +8,10 @@
 - Less preprocessor
 
 ## Start to try React
+- npm install -g webpack-dev-server
 - npm install
 - npm start
+- open http://localhost:8080
 
 ##Contribute
 

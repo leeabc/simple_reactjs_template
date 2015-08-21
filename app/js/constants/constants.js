@@ -1,4 +1,3 @@
-var constants = {
+export default {
 	"HELLO" : "HELLO"
 }
-module.exports = constants;

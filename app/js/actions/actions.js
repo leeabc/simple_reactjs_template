@@ -1,12 +1,11 @@
-var dispatcher = require("../dispatcher/dispatcher");
-var constants = require("../constants/constants")
-var actions = {
-	hello: function(text){
+import dispatcher from "../dispatcher/dispatcher";
+import constants from "../constants/constants";
+
+export default new class Actions{
+	hello(text){
 		dispatcher.dispatch({
 			type: constants.HELLO,
 			text: text
 		});
 	}
-};
-
-module.exports = actions;
+}

@@ -1,45 +1,47 @@
-require("../../assets/less/Main.less");
+import "../../assets/less/Main.less";
 
-var React = require('react');
-var store = require('../stores/stores');
-var actions = require("../actions/actions");
-var Button = require("./Button.jsx");
+import React from 'react';
+import store from '../stores/stores';
+import actions from '../actions/actions';
+import Button from './Button.jsx';
 
-var Main = React.createClass({
-	getInitialState: function () {
-	    return {
+export default class extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
 	        helloTxt : store.getHello()
-	    };
-	},
-	componentDidMount: function () {
-	    store.addChangeListener(this._onChange);
+	    }
+	}
+
+	componentDidMount(){
+	    store.addChangeListener(this._onChange.bind(this));
 
 		var inputObj = this.refs.helloInput.getDOMNode();
-	    inputObj.addEventListener("keydown",function(e){
+
+	    inputObj.addEventListener("keydown",(e) => {
 	    	if(e.which == 13){ // enter
 	    		actions.hello(inputObj.value);
 	    	}
 	    });
-	},
-	componentWillMount: function () {
+	}
+	componentWillMount(){
 	    store.removeChangeListener(this._onChange);
-	},
-	_onChange: function(){
+	}
+
+	_onChange(){
 		this.setState({
 			helloTxt: store.getHello()
 		});
-	},
-    render: function(){
+	}
+
+    render(){
         return (
         	<div>
         		<input type="text" placeholder="text" ref="helloInput"></input>
         		<div>Hello Text: {this.state.helloTxt}</div>
         		<hr/>
-            	<Button text="Hello World"></Button>
+            	<Button text="Hello World!"></Button>
             </div>
-            );
+        );
     }
-
-    });
-
-module.exports = Main;
+};
