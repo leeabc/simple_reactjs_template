@@ -1,8 +1,9 @@
+require("../../assets/less/Main.less");
+
 var React = require('react');
 var store = require('../stores/stores');
 var actions = require("../actions/actions");
-
-var Button = React.createFactory( require("./Button.jsx") );
+var Button = require("./Button.jsx");
 
 var Main = React.createClass({
 	getInitialState: function () {

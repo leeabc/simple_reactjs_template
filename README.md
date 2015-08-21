@@ -1,18 +1,17 @@
 #Simple ReactJS Template
 ##Features
-- Gulp inside
-- Built in preview web server & live reload
-- Bootstrap 3.2 css framework
+- Webpack inside & React-Hot reloader
+- React & React-hot module
+- Flux
+- Babel(ES6) support
+- Bootstrap 3 framework
 - Less preprocessor
-- ReactJs engine
-- Flux flow
 
-## Getting Start
+## Start to try React
 - npm install
-- gulp
+- npm start
 
 ##Contribute
-Submit a pull request and I'll do it ASAP. Thank you!
 
 ##License
 MIT
