@@ -1,47 +1,53 @@
 import "../../assets/less/Main.less";
-
 import React from 'react';
-import store from '../stores/stores';
-import actions from '../actions/actions';
+import { Component, PropTypes } from 'react';
 import Button from './Button.jsx';
 
-export default class extends React.Component{
-	constructor(props){
-		super(props);
-		this.state = {
-	        helloTxt : store.getHello()
-	    }
-	}
+import { connect } from 'react-redux';
+import { addMessage, removeMessage } from '../actions/actions';
 
+class App extends Component{
 	componentDidMount(){
-	    store.addChangeListener(this._onChange.bind(this));
+		const { dispatch } = this.props;
 
-		var inputObj = this.refs.helloInput.getDOMNode();
+		var inputObj = this.refs.helloInput;
+		var removeBtn = this.refs.removeInput;
 
+		console.log(inputObj);
 	    inputObj.addEventListener("keydown",(e) => {
 	    	if(e.which == 13){ // enter
-	    		actions.hello(inputObj.value);
+	    		dispatch(addMessage(inputObj.value));
+	    		inputObj.value = "";
 	    	}
 	    });
 	}
-	componentWillMount(){
-	    store.removeChangeListener(this._onChange);
-	}
-
-	_onChange(){
-		this.setState({
-			helloTxt: store.getHello()
-		});
-	}
 
     render(){
+    	const { dispatch, message, removeMessage } = this.props;
         return (
         	<div>
         		<input type="text" placeholder="text" ref="helloInput"></input>
-        		<div>Hello Text: {this.state.helloTxt}</div>
+        		<div>Hello Text: {message}</div>
         		<hr/>
-            	<Button text="Hello World!"></Button>
+            	<Button ref="removeInput" text="Hello World!" onClickHandler={this.handleRemove.bind(this)}></Button>
             </div>
         );
     }
+
+    handleRemove(){
+    	const { dispatch } = this.props;
+    	dispatch(removeMessage());
+    }
 };
+
+App.propTypes = {
+	message: PropTypes.string.isRequired,
+};
+
+function select(state){
+	return {
+		message: state.message
+	}
+}
+
+export default connect(select)(App);

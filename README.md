@@ -2,7 +2,7 @@
 ##Features
 - Webpack inside & React-Hot reloader
 - React & React-hot module
-- Flux
+- Redux
 - Babel(ES6) support
 - Bootstrap 3 framework
 - Less preprocessor
